@@ -10,9 +10,10 @@ app.set('view engine', 'pug')
 
 // database
 const pgp = require('pg-promise')()
-const db = pgp('postgres://postgres:Asym_111@localhost:5432/postgres') 
+const db = pgp('postgres://postgres:Arham_6501@db-hw3.cdqomclygnhq.us-east-2.rds.amazonaws.com:5432/postgres') 
 
   app.get('/', function(req, res) {
+    console.log('testing');
      db.one('SELECT VERSION();').then(data => {
         res.render('index', {
             version: data.version
