@@ -9,11 +9,11 @@ app.set('view engine', 'pug')
 
 
 // database
-/* const pgp = require('pg-promise')()
-const db = pgp('postgres://postgres:Asym_111@localhost:5432/postgres') */
+const pgp = require('pg-promise')()
+const db = pgp('postgres://postgres:Asym_111@localhost:5432/postgres') 
 
   app.get('/', function(req, res) {
-    /* db.one('SELECT VERSION();').then(data => {
+     db.one('SELECT VERSION();').then(data => {
         res.render('index', {
             version: data.version
         })
@@ -21,8 +21,7 @@ const db = pgp('postgres://postgres:Asym_111@localhost:5432/postgres') */
   })
   .catch((error) => {
     console.log('ERROR:', error)
-  }) */
-  res.send('hello world');
+  }) 
   });
 
 app.listen(3000, () => {
